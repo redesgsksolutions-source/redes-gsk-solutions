@@ -1,76 +1,241 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REDES GSK SOLUTIONS S.A.C.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#082b59">
+<meta name="description" content="REDES GSK SOLUTIONS S.A.C. Soluciones de ingeniería, electricidad, telecomunicaciones, mantenimiento, energía solar y capacitación profesional en Perú.">
+<title>REDES GSK SOLUTIONS S.A.C. | Ingeniería, Redes y Energía</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;color:#263449;background:#f4f7fb}
-header{background:#073b78;color:white;text-align:center;padding:30px 15px}
-header h1{margin:0;font-size:27px}
-header p{margin-bottom:0}
-nav{background:#0756a5;padding:14px;text-align:center}
-nav a{color:white;text-decoration:none;margin:8px;font-weight:bold}
-.hero{padding:45px 20px;text-align:center;background:white}
-.hero h2{color:#0756a5;font-size:30px}
-.hero p{line-height:1.7}
-main{max-width:1000px;margin:auto;padding:20px}
-h2{color:#0756a5}
-.servicios{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.card{background:white;padding:22px;border-radius:10px;box-shadow:0 2px 8px #dce4ef}
-.card h3{color:#0756a5}
-section{margin-bottom:35px}
-.contacto{background:#073b78;color:white;padding:25px;border-radius:10px}
-.contacto h2{color:white}
-.boton{display:inline-block;background:#12a66a;color:white;padding:13px 20px;border-radius:7px;text-decoration:none;font-weight:bold}
-footer{background:#09284b;color:white;text-align:center;padding:20px}
+:root{--navy:#082b59;--blue:#0875d1;--sky:#eaf5ff;--ink:#18324d;--muted:#63758a;--line:#d9e6f2;--white:#fff;--gold:#f4b942}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.65;background:#fff}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1160px,92%);margin:auto}
+.topbar{background:var(--navy);color:#e9f4ff;font-size:12px;padding:7px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--navy);font-weight:900;line-height:1.15}
+.brand svg{width:49px;height:49px;flex-shrink:0}
+.brand small{display:block;color:var(--blue);font-size:10px;letter-spacing:1.6px;margin-top:5px}
+nav{display:flex;align-items:center;gap:22px;font-size:13px;font-weight:700}
+nav a:hover{color:var(--blue)}
+.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:9px;font-weight:800;font-size:13px;border:1px solid transparent;transition:.2s}
+.nav-cta,.primary{background:var(--blue);color:white}
+.nav-cta:hover,.primary:hover{background:var(--navy);transform:translateY(-1px)}
+.secondary{border-color:#c8d8e8;background:#fff;color:var(--navy)}
+.secondary:hover{border-color:var(--blue);color:var(--blue)}
+.menu-btn{display:none;background:none;border:0;color:var(--navy);font-size:28px;padding:5px}
+.hero{background:linear-gradient(110deg,#f4f9ff 0%,#fff 52%,#e7f3ff 100%);padding:70px 0 65px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:45px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border-radius:30px;background:#dceeff;color:var(--blue);padding:7px 13px;font-size:11px;font-weight:900;letter-spacing:.7px;text-transform:uppercase;margin-bottom:18px}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+h1{font-size:clamp(36px,5vw,60px);line-height:1.08;letter-spacing:-1.7px;color:var(--navy);margin-bottom:20px}
+h1 span{color:var(--blue)}
+.hero-copy{font-size:17px;color:var(--muted);max-width:600px;margin-bottom:26px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-photo{position:relative;min-height:390px;border-radius:24px;overflow:hidden;box-shadow:0 24px 60px #082b5928;background:#cfe4f7}
+.hero-photo img{position:absolute;inset:0;height:100%;object-fit:cover}
+.photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,#082b5900 38%,#082b59d9 100%)}
+.photo-caption{position:absolute;left:25px;right:25px;bottom:23px;color:#fff}
+.photo-caption strong{font-size:21px;display:block}
+.photo-caption span{font-size:13px;color:#e0efff}
+.trust-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-size:12px;font-weight:700}
+.trust-row span{display:flex;align-items:center;gap:7px}
+.check{color:#12835c;font-weight:900}
+.stats{background:var(--navy);color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:22px 0}
+.stat{display:flex;align-items:center;justify-content:center;gap:12px;text-align:left}
+.stat b{font-size:15px;display:block}
+.stat small{color:#c9d9ee;font-size:11px}
+section{padding:78px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 36px}
+.kicker{color:var(--blue);font-weight:900;letter-spacing:1.5px;font-size:11px;text-transform:uppercase}
+h2{font-size:clamp(28px,3.7vw,40px);line-height:1.2;color:var(--navy);margin:9px 0 13px;letter-spacing:-.7px}
+.section-head p{color:var(--muted);font-size:15px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
+.service{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff;transition:.25s}
+.service:hover{transform:translateY(-4px);box-shadow:0 18px 38px #082b5912;border-color:#b9d8f5}
+.service img{height:180px}
+.service-body{padding:21px}
+.service-icon{width:38px;height:38px;border-radius:10px;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-size:19px;margin-bottom:12px}
+.service h3{font-size:17px;color:var(--navy);margin-bottom:8px}
+.service p{font-size:13px;color:var(--muted);margin-bottom:13px}
+.learn{font-size:12px;font-weight:900;color:var(--blue)}
+.about{background:#f5f9fd}
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:48px;align-items:center}
+.about-photo{height:410px;border-radius:20px;overflow:hidden;position:relative}
+.about-photo img{height:100%}
+.about-copy p{color:var(--muted);margin:13px 0;font-size:15px}
+.benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
+.benefit{background:white;border:1px solid var(--line);border-radius:10px;padding:13px;font-size:12px;font-weight:800;color:var(--navy)}
+.benefit span{color:var(--blue);margin-right:7px}
+.training{background:linear-gradient(120deg,var(--navy),#0a4b88);color:white}
+.training-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.training h2{color:white}
+.training p{color:#d2e4f8;margin:14px 0 22px}
+.training-card{background:#ffffff12;border:1px solid #ffffff35;border-radius:16px;padding:24px}
+.training-card h3{font-size:18px;margin-bottom:12px}
+.training-card li{list-style:none;margin:10px 0;color:#e0edfb;font-size:13px}
+.training-card li:before{content:"✓";color:#ffd36e;font-weight:900;margin-right:9px}
+.gallery-grid{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:14px}
+.gallery-grid img{height:215px;border-radius:13px}
+.gallery-grid img:first-child{height:444px;grid-row:span 2}
+.contact{background:#f5f9fd}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px}
+.contact-panel,.contact-form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:27px}
+.contact-panel h3,.contact-form h3{font-size:21px;color:var(--navy);margin-bottom:12px}
+.contact-panel>p{color:var(--muted);font-size:13px;margin-bottom:20px}
+.contact-item{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid #edf2f7}
+.contact-item:last-child{border:0}
+.contact-icon{width:37px;height:37px;border-radius:10px;background:var(--sky);display:grid;place-items:center;color:var(--blue);flex-shrink:0}
+.contact-item b{display:block;color:var(--navy);font-size:12px}
+.contact-item span{font-size:13px;color:var(--muted);overflow-wrap:anywhere}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+label{display:block;font-size:12px;font-weight:800;color:var(--navy)}
+input,select,textarea{font:inherit;width:100%;margin-top:6px;padding:12px;border:1px solid #d7e2ee;border-radius:8px;background:#fff;color:var(--ink);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #0875d115}
+textarea{min-height:110px;resize:vertical}
+.full{grid-column:1/-1}
+.form-note{font-size:11px;color:var(--muted);margin-top:10px}
+footer{background:#061f40;color:#c5d6ea;padding:28px 0;font-size:12px}
+.footer-flex{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.footer-brand{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800}
+.footer-brand svg{width:33px;height:33px}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#19b968;color:white;box-shadow:0 8px 25px #062b5940;border:3px solid #fff}
+.wa-float svg{width:29px;height:29px}
+@media(max-width:850px){
+ nav{gap:12px;font-size:12px}.hero-grid{gap:25px}.hero-photo{min-height:330px}
+ .services-grid{grid-template-columns:repeat(2,1fr)}.about-grid{gap:25px}.contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+ .topbar .container{justify-content:center;text-align:center}.nav{min-height:70px}.brand svg{width:43px;height:43px}.brand{font-size:13px}.brand small{font-size:9px}
+ .menu-btn{display:block}nav{display:none;position:absolute;top:70px;left:0;right:0;padding:18px 5%;background:white;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
+ nav.open{display:flex}nav a{padding:12px 0;border-bottom:1px solid #edf2f7;font-size:14px}.nav-cta{margin-top:10px}
+ .hero{padding:45px 0}.hero-grid{grid-template-columns:1fr;gap:30px}h1{font-size:40px}.hero-copy{font-size:15px}.hero-photo{min-height:290px}
+ .stats-grid{grid-template-columns:1fr;gap:13px;padding:18px 0}.stat{justify-content:flex-start}
+ section{padding:57px 0}.services-grid{grid-template-columns:1fr}.service img{height:205px}
+ .about-grid,.training-grid{grid-template-columns:1fr}.about-photo{height:290px}.benefits{grid-template-columns:1fr 1fr}
+ .gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img,.gallery-grid img:first-child{height:160px;grid-row:auto}.gallery-grid img:first-child{grid-column:1/-1;height:220px}
+ .contact-panel,.contact-form{padding:20px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}
+ .footer-flex{justify-content:center;text-align:center}.wa-float{width:54px;height:54px;right:14px;bottom:14px}
+}
 </style>
 </head>
 <body>
+<div class="topbar"><div class="container"><span>Soluciones técnicas para empresas y proyectos</span><span>Atención en Perú · redesgsksolutions@gmail.com</span></div></div>
 <header>
-<h1>REDES GSK SOLUTIONS S.A.C.</h1>
-<p>Soluciones técnicas, ingeniería y capacitación profesional</p>
+ <div class="container nav">
+  <a class="brand" href="#inicio" aria-label="REDES GSK SOLUTIONS inicio">
+   <svg viewBox="0 0 100 100" role="img" aria-label="Logotipo GSK"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0875d1"/><stop offset="1" stop-color="#082b59"/></linearGradient></defs><path d="M50 4 91 27v46L50 96 9 73V27Z" fill="url(#g)"/><path d="M28 35h18v8H36v17h10v-7h-7v-7h16v22H28Z" fill="#fff"/><path d="M60 35h15v8H63v7h12v18H57v-8h10v-3H57V42Z" fill="#f4b942"/><path d="M21 77h58" stroke="#fff" stroke-width="3" opacity=".8"/></svg>
+   <span>REDES GSK SOLUTIONS<small>S.A.C. · INGENIERÍA TOTAL & REDES</small></span>
+  </a>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <nav id="nav">
+   <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a><a href="#capacitacion">Capacitación</a><a href="#contacto">Contacto</a>
+   <a class="nav-cta" href="https://wa.me/51922000431?text=Hola%20REDES%20GSK%20SOLUTIONS%2C%20quisiera%20informaci%C3%B3n." target="_blank" rel="noopener">WhatsApp ↗</a>
+  </nav>
+ </div>
 </header>
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#servicios">Servicios</a>
-<a href="#nosotros">Nosotros</a>
-<a href="#contacto">Contacto</a>
-</nav>
-<div class="hero" id="inicio">
-<h2>Soluciones que conectan tu futuro</h2>
-<p>Especialistas en servicios técnicos, mantenimiento, ingeniería, telecomunicaciones y capacitación profesional.</p>
-<a class="boton" href="#servicios">Conoce nuestros servicios</a>
-</div>
 <main>
-<section id="nosotros">
-<h2>¿Quiénes somos?</h2>
-<p>Somos REDES GSK SOLUTIONS S.A.C., una empresa comprometida con la calidad, la seguridad y la innovación. Ofrecemos soluciones técnicas y profesionales para empresas y proyectos.</p>
+<section class="hero" id="inicio">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow">Ingeniería · Redes · Energía</div>
+   <h1>Conectamos tus proyectos con <span>soluciones confiables.</span></h1>
+   <p class="hero-copy">Diseño, instalación, mantenimiento y soporte técnico para infraestructura eléctrica, telecomunicaciones, redes y capacitación profesional.</p>
+   <div class="actions"><a class="btn primary" href="#contacto">Solicitar cotización ↗</a><a class="btn secondary" href="#servicios">Conocer servicios</a></div>
+   <div class="trust-row"><span><b class="check">✓</b> Atención técnica</span><span><b class="check">✓</b> Soluciones a medida</span><span><b class="check">✓</b> Enfoque en seguridad</span></div>
+  </div>
+  <div class="hero-photo">
+   <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" alt="Infraestructura moderna y edificios de ingeniería" fetchpriority="high">
+   <div class="photo-overlay"></div><div class="photo-caption"><strong>Ingeniería que impulsa tu operación</strong><span>Proyectos, mantenimiento y tecnología para tu empresa.</span></div>
+  </div>
+ </div>
 </section>
+<div class="stats"><div class="container stats-grid">
+ <div class="stat"><span style="font-size:25px">⌁</span><div><b>Electricidad y energía</b><small>Protección y continuidad operativa</small></div></div>
+ <div class="stat"><span style="font-size:25px">⌘</span><div><b>Redes y telecomunicaciones</b><small>Conectividad e infraestructura</small></div></div>
+ <div class="stat"><span style="font-size:25px">▣</span><div><b>Capacitación profesional</b><small>Evaluación y desarrollo profesional</small></div></div>
+</div></div>
 <section id="servicios">
-<h2>Nuestros servicios</h2>
-<div class="servicios">
-<div class="card"><h3>⚡ Sistemas eléctricos</h3><p>Mantenimiento preventivo y correctivo de UPS, bancos de baterías y transformadores de aislamiento.</p></div>
-<div class="card"><h3>📡 Telecomunicaciones</h3><p>Fabricación e instalación de torres, cableado estructurado y soluciones de conectividad.</p></div>
-<div class="card"><h3>🛠️ Ingeniería y mantenimiento</h3><p>Servicios técnicos, instalaciones, reparaciones y soporte para proyectos empresariales.</p></div>
-<div class="card"><h3>🎓 Capacitación profesional</h3><p>Especialistas en capacitación de cursos de evaluación y desarrollo profesional.</p></div>
-<div class="card"><h3>💻 Tecnología y soluciones web</h3><p>Desarrollo web y herramientas digitales para empresas y negocios.</p></div>
-<div class="card"><h3>📢 Publicidad digital</h3><p>Organización de campañas y soluciones para la distribución de anuncios digitales.</p></div>
-</div>
+ <div class="container">
+  <div class="section-head"><div class="kicker">Qué hacemos</div><h2>Servicios especializados para tu empresa</h2><p>Integramos experiencia técnica, planificación y soluciones prácticas para atender las necesidades de cada proyecto.</p></div>
+  <div class="services-grid">
+   <article class="service"><img src="https://images.unsplash.com/photo-1473341304170-971311b2b4c8?auto=format&fit=crop&w=900&q=80" alt="Líneas y equipos de energía eléctrica" loading="lazy"><div class="service-body"><div class="service-icon">ϟ</div><h3>Sistemas eléctricos y energía</h3><p>Mantenimiento de sistemas de protección eléctrica, UPS, bancos de baterías, transformadores de aislamiento y soluciones solares.</p><a class="learn" href="#contacto">Consultar servicio →</a></div></article>
+   <article class="service"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Componentes tecnológicos y electrónicos" loading="lazy"><div class="service-body"><div class="service-icon">⌘</div><h3>Telecomunicaciones e infraestructura</h3><p>Fabricación e instalación de torres, enlaces, infraestructura de comunicación y soporte técnico especializado.</p><a class="learn" href="#contacto">Consultar servicio →</a></div></article>
+   <article class="service"><img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80" alt="Técnico realizando trabajos de mantenimiento" loading="lazy"><div class="service-body"><div class="service-icon">⚙</div><h3>Mantenimiento técnico</h3><p>Planes preventivos y correctivos, inspecciones, diagnóstico y soporte para mejorar la confiabilidad de los equipos.</p><a class="learn" href="#contacto">Consultar servicio →</a></div></article>
+   <article class="service"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80" alt="Infraestructura de redes y servidores" loading="lazy"><div class="service-body"><div class="service-icon">▤</div><h3>Redes, cableado y seguridad</h3><p>Cableado estructurado, redes de datos, conectividad y soluciones de videovigilancia IP.</p><a class="learn" href="#contacto">Consultar servicio →</a></div></article>
+   <article class="service"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Espacio de trabajo para ingeniería y proyectos" loading="lazy"><div class="service-body"><div class="service-icon">⌁</div><h3>Ingeniería y proyectos</h3><p>Asistencia técnica, planificación, ejecución de instalaciones y propuestas de mejora según los requerimientos del cliente.</p><a class="learn" href="#contacto">Consultar servicio →</a></div></article>
+   <article class="service"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=80" alt="Capacitación y formación profesional" loading="lazy"><div class="service-body"><div class="service-icon">▣</div><h3>Capacitación profesional</h3><p>Especialistas en cursos de evaluación y desarrollo profesional, con formación orientada a competencias y mejora continua.</p><a class="learn" href="#capacitacion">Ver capacitación →</a></div></article>
+  </div>
+ </div>
 </section>
-<section class="contacto" id="contacto">
-<h2>Contáctanos</h2>
-<p>Solicita información sobre nuestros servicios y proyectos.</p>
-<p><strong>Correo:</strong> redesgsksolutions@gmail.com</p>
-<a class="boton" href="mailto:redesgsksolutions@gmail.com">Enviar correo</a>
+<section class="about" id="nosotros">
+ <div class="container about-grid">
+  <div class="about-photo"><img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1000&q=85" alt="Profesionales trabajando en un proyecto técnico" loading="lazy"></div>
+  <div class="about-copy"><div class="kicker">Quiénes somos</div><h2>Compromiso técnico, seguridad y calidad</h2><p>REDES GSK SOLUTIONS S.A.C. brinda soluciones en ingeniería, electricidad, telecomunicaciones, mantenimiento y capacitación profesional.</p><p>Trabajamos para comprender cada necesidad y proponer alternativas claras, prácticas y enfocadas en la continuidad de las operaciones de nuestros clientes.</p>
+   <div class="benefits"><div class="benefit"><span>✓</span> Atención personalizada</div><div class="benefit"><span>✓</span> Enfoque preventivo</div><div class="benefit"><span>✓</span> Soluciones integrales</div><div class="benefit"><span>✓</span> Mejora continua</div></div>
+   <a class="btn primary" href="#contacto">Conversemos sobre tu proyecto</a>
+  </div>
+ </div>
+</section>
+<section class="training" id="capacitacion">
+ <div class="container training-grid">
+  <div><div class="kicker" style="color:#ffd36e">Formación y desarrollo</div><h2>Capacitación que fortalece las competencias profesionales</h2><p>Programas y cursos orientados a la evaluación, actualización de conocimientos y desarrollo profesional. Escríbenos para consultar disponibilidad y contenidos.</p><a class="btn" style="background:#f4b942;color:#082b59" href="https://wa.me/51922000431?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20capacitaci%C3%B3n." target="_blank" rel="noopener">Consultar cursos por WhatsApp ↗</a></div>
+  <div class="training-card"><h3>Áreas de atención</h3><ul><li>Evaluación y desarrollo profesional</li><li>Capacitación técnica según requerimientos</li><li>Actualización de conocimientos y competencias</li><li>Orientación para empresas y profesionales</li></ul></div>
+ </div>
+</section>
+<section id="galeria">
+ <div class="container"><div class="section-head"><div class="kicker">Nuestro campo de trabajo</div><h2>Tecnología, infraestructura y proyectos</h2><p>Una muestra visual de los sectores y entornos relacionados con nuestros servicios.</p></div>
+  <div class="gallery-grid"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Componentes electrónicos" loading="lazy"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=700&q=80" alt="Instalaciones profesionales" loading="lazy"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80" alt="Herramientas y trabajo técnico" loading="lazy"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" alt="Equipo colaborando en tecnología" loading="lazy"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80" alt="Espacio de trabajo de proyectos" loading="lazy"></div>
+ </div>
+</section>
+<section class="contact" id="contacto">
+ <div class="container"><div class="section-head"><div class="kicker">Hablemos de tu proyecto</div><h2>Solicita información o una cotización</h2><p>Cuéntanos qué necesitas. Puedes enviar tu consulta por WhatsApp o correo electrónico.</p></div>
+  <div class="contact-grid">
+   <div class="contact-panel"><h3>Contacto empresarial</h3><p>Estamos listos para conocer tu requerimiento y orientarte sobre el servicio más adecuado.</p>
+    <div class="contact-item"><div class="contact-icon">☎</div><div><b>WhatsApp / Teléfono</b><span>+51 922 000 431</span></div></div>
+    <div class="contact-item"><div class="contact-icon">✉</div><div><b>Correo electrónico</b><span>redesgsksolutions@gmail.com</span></div></div>
+    <div class="contact-item"><div class="contact-icon">⌖</div><div><b>Ubicación</b><span>Yarinacocha, Perú</span></div></div>
+    <div class="contact-item"><div class="contact-icon">◷</div><div><b>Atención</b><span>Consultas para proyectos y servicios empresariales</span></div></div>
+    <a class="btn primary" style="width:100%;margin-top:18px" href="https://wa.me/51922000431?text=Hola%20REDES%20GSK%20SOLUTIONS%2C%20quisiera%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener">Escribir por WhatsApp ↗</a>
+   </div>
+   <div class="contact-form"><h3>Prepara tu consulta</h3><form id="quoteForm">
+    <div class="form-grid">
+     <label>Nombre<input id="nombre" required placeholder="Tu nombre"></label>
+     <label>Empresa<input id="empresa" placeholder="Nombre de empresa"></label>
+     <label>Teléfono<input id="telefono" placeholder="+51 ..."></label>
+     <label>Servicio<select id="servicio"><option>Selecciona un servicio</option><option>Sistemas eléctricos y energía</option><option>Telecomunicaciones e infraestructura</option><option>Mantenimiento técnico</option><option>Redes, cableado y seguridad</option><option>Ingeniería y proyectos</option><option>Capacitación profesional</option><option>Otro</option></select></label>
+     <label class="full">Mensaje<textarea id="mensaje" required placeholder="Describe brevemente tu proyecto o requerimiento..."></textarea></label>
+     <div class="full"><button class="btn primary" type="submit">Enviar consulta por WhatsApp ↗</button><p class="form-note">Este formulario abre WhatsApp con tu mensaje preparado; no guarda datos en esta página.</p></div>
+    </div>
+   </form></div>
+  </div>
+ </div>
 </section>
 </main>
-<footer>
-<p>© 2026 REDES GSK SOLUTIONS S.A.C.</p>
-<p>Calidad, innovación y compromiso profesional.</p>
-</footer>
+<footer><div class="container footer-flex"><div class="footer-brand"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 91 27v46L50 96 9 73V27Z" fill="#0875d1"/><path d="M28 35h18v8H36v17h10v-7h-7v-7h16v22H28Z" fill="#fff"/><path d="M60 35h15v8H63v7h12v18H57v-8h10v-3H57V42Z" fill="#f4b942"/></svg><span>REDES GSK SOLUTIONS S.A.C.</span></div><div>© 2026 · Ingeniería, redes, energía y capacitación profesional.</div><a href="#inicio">Volver arriba ↑</a></div></footer>
+<a class="wa-float" href="https://wa.me/51922000431?text=Hola%20REDES%20GSK%20SOLUTIONS" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+ <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.05 24l6.27-1.64a11.9 11.9 0 0 0 5.75 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.49-8.42ZM12.08 21.8a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.98.99-3.63-.24-.37a9.83 9.83 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.88-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.89 9.88Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg>
+</a>
+<script>
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰';}));
+document.getElementById('quoteForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('nombre').value.trim();
+ const company=document.getElementById('empresa').value.trim();
+ const phone=document.getElementById('telefono').value.trim();
+ const service=document.getElementById('servicio').value;
+ const message=document.getElementById('mensaje').value.trim();
+ const text=`Hola REDES GSK SOLUTIONS S.A.C.%0AQuisiera solicitar información/cotización.%0A%0ANombre: ${encodeURIComponent(name)}%0AEmpresa: ${encodeURIComponent(company||'No indicada')}%0ATeléfono: ${encodeURIComponent(phone||'No indicado')}%0AServicio: ${encodeURIComponent(service)}%0AMensaje: ${encodeURIComponent(message)}`;
+ window.open('https://wa.me/51922000431?text='+text,'_blank','noopener');
+});
+</script>
 </body>
 </html>
